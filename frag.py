@@ -13,13 +13,14 @@ if len(sys.argv) !=2:
     print "Usage: ./frag.py <ipaddr>"
     sys.exit(1)
 
-# Create a TCP packet and load your data 
-data = "This is a test string"
+# Create a packet and load your data 
+data = "This is not malicious code but, this is!!!!!......."
 packet = IP(dst=sys.argv[1]) / TCP() / Raw(load=data)
+print sys.getsizeof(data)
 
-#Fragment the packet
-frags = fragment(packet,fragsize=16)
+#Fragment the packet and send
+frags = fragment(packet,fragsize=8)
 for f in frags:
     f.show()
     send(f)
-    f.show()
+    
