@@ -16,7 +16,7 @@ if len(sys.argv) != 2:
     sys.exit(1)
 
 # Packet Data
-data = ["ABCDEFGH","HACKEEDD","TESTTEST"]
+data = ["ABCDEFGH","HGFEDCBA","TESTTEST"]
 flags = [1,1,0]
 frag = [0,1,2]
 
